@@ -22,6 +22,11 @@ include __DIR__ . '/database/database.php';
                         <div class="card-body">
                             <p>Name <?php echo $product->name ?></p>
                             <p>Prezzo: <?php echo $product->price ?></p>
+                            <?php if (!isnull($product->type == 'cat'): ?>
+                                <i class="fa-solid fa-cat fs-3 p-2 rounded-circle bg-info"></i>
+                            <?php elseif ($product->type == 'dog') : ?>
+                                <i class="fa-solid fa-dog fs-3 p-2 rounded-circle bg-info"></i>
+                            <?php endif;  ?>
                         </div>
                     </div>
 
