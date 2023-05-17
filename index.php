@@ -1,4 +1,5 @@
 <?php
+include __DIR__ . '/database/database.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +13,22 @@
 </head>
 
 <body>
+    <div class="container">
+        <div class="row">
+            <?php foreach ($products as $product) : ?>
+                <div class="col">
+                    <div class="card">
+                        <img src=<?php echo "'$product->image '" ?> alt="">
+                        <div class="card-body">
+                            <p>Name <?php echo $product->name ?></p>
+                            <p>Prezzo: <?php echo $product->price ?></p>
+                        </div>
+                    </div>
 
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
 
 
 </body>
