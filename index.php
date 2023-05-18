@@ -31,6 +31,11 @@ include __DIR__ . '/database/database.php';
                                     <p>Adatto per: </p> <i class="fa-solid fa-dog fs-3 p-2 rounded-circle bg-success"></i>
                                 <?php endif;  ?>
                             <?php endif;  ?>
+                            <?php if (property_exists($product, 'weight')) {
+                                echo "<span>{$product->weight}</span>";
+                            }
+                            ?>
+
                         </div>
 
                     </div>
